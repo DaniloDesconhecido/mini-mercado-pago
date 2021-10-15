@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<title>Banco-valida-código</title>
+<style>
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-family: Rubik, Arial, sans-serif;
+	font-size: 18px;
+}
+.bl-conteudo
+{
+	width: 100%;
+	height: 600px;
+	background-color: #CCC;
+	display:flex;
+}
+.bl-caixa-de-info
+{
+	background-color: #FFF;
+	height: 280px;
+	width: 440px;
+	margin: 0 auto;
+	border-radius: 15px;
+	padding: 40px;
+}
+.bl-ajustar
+{
+	width: 100%;
+	padding-bottom: 40px;
+}
+.bl-bloco
+{
+	display:inline-block;
+}
+img[alt^=codigo]
+{
+	width: 100%;
+	height: 100px;
+}
+.bl-espaco
+{
+	margin-bottom: 20px;
+}
+.bl-espaco2
+{
+	margin-top: 10px;
+}
+.bl-botao-azul
+{
+	height: 40px;
+	width: 100px;
+	background-color: #009ee3;
+	color: #FFF;
+	font-size: 12px;
+	border: none;
+	border-radius: 15px;
+}
+.bl-botao-sem-fundo
+{
+	height: 40px;
+	width: 100px;
+	background-color: rgba(0,0,0,0);
+	color: #009ee3;
+	font-size: 12px;
+	border: none;
+	border-radius: 15px;
+}
+</style>
+</head>
+
+<body>
+    <div class="bl-conteudo">
+        <div class="bl-caixa-de-info">
+            	<h2 class="bl-espaco">
+                Seu boleto foi gerado
+                </h2>
+                <div>
+                Copie o código ou pague em qualquer banco até a data de vencimento
+                </div>
+                <strong class="bl-espaco">
+                23793 38128 60067 117238 41000 063309 1 87350000012851
+                </strong>
+                <div>
+                <img src="../imagens/Barras.png" alt="codigo" class="bl-espaco2">
+                </div>
+                <div>
+                <button class="bl-botao-azul">Imprimir</button>
+                <button class="bl-botao-sem-fundo">Ir para conta</button>
+                </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

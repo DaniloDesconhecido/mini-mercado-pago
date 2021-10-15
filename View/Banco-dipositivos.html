@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<title>Banco-dispositivos</title>
+<style>
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-family: Rubik, Arial, sans-serif;
+	font-size: 18px;
+}
+.bl-conteudo
+{
+	width: 100%;
+	height: 800px;
+	background-color: #CCC;
+	display:flex;
+}
+.bl-caixa-de-info
+{
+	height: 500px;
+	width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.bl-caixa-dispositivos
+{
+	max-width: 868px;
+	min-width: 360px;
+	height: 60px;
+	background-color:#FFF;
+	margin-top: 5px;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+}
+.bl-bloco
+{
+	display:inline-block;
+}
+.bl-bloco-margem-esquerda
+{
+	margin-left: 20px;
+}
+.bl-bloco img
+{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background-color: #eee;
+	border: 1px solid #009ee3;
+}
+.bl-cor-cinza-claro
+{
+	color:#878787;
+}
+.bl-cor-verde
+{
+	color: #00a667;
+}
+.bl-cor-azul
+{
+	color: #009ee3;
+}
+.bl-flexibiliza
+{
+	display: flex;
+	justify-content: space-between;
+}
+.bl-largura-flex
+{
+	width: 100%;
+}
+.bl-alinha-middle
+{
+	display: flex;
+	align-items: center;
+}
+.bl-alinha-middle a
+{
+	text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+    <div class="bl-conteudo">
+        <div class="bl-caixa-de-info">
+        	<div>
+            <h3>Caso você não reconheça algum dispositivo, desvincule.</h3>
+            </div>
+            <div class="bl-caixa-dispositivos">
+            	<div class="bl-bloco">
+                	<img src="../icones/Icone-computador.png" alt="informacao">
+                </div>
+                <div class="bl-bloco bl-bloco-margem-esquerda">
+                	<div>Windows 10</div>
+                    <div>
+                    	<span class="bl-cor-cinza-claro">Firefox</span>
+                        <span class="bl-cor-verde">Este dispositivo</span>
+                    </div>
+                </div>
+             </div>
+             <div class="bl-caixa-dispositivos">
+                <div class="bl-bloco">
+                	<img src="../icones/Icone-telefone.png" alt="informacao">
+                </div>
+                <div class="bl-bloco bl-bloco-margem-esquerda bl-largura-flex">
+					<div class="bl-flexibiliza">
+						<div>
+							<div>
+								<div>Windows 10</div>
+								<div class="bl-cor-cinza-claro">Chorme - Há dois dias</div>
+							</div>
+						</div>
+						<div class="bl-alinha-middle">
+							<a class="bl-cor-azul" href="#">Desvincular</a>
+						</div>
+					</div>
+                </div>
+            </div>
+			 <div class="bl-caixa-dispositivos">
+                <div class="bl-bloco">
+                	<img src="../icones/Icone-telefone.png" alt="informacao">
+                </div>
+                <div class="bl-bloco bl-bloco-margem-esquerda bl-largura-flex">
+					<div class="bl-flexibiliza">
+						<div>
+							<div>
+								<div>Windows 7</div>
+								<div class="bl-cor-cinza-claro">Firefox - Há 50 dias</div>
+							</div>
+						</div>
+						<div class="bl-alinha-middle">
+							<a class="bl-cor-azul" href="#">Desvincular</a>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
