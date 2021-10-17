@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<title>Banco Cadastro</title>
+<style>
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-family: Rubik, Arial, sans-serif;
+	font-size: 18px;
+}
+.bl-conteudo
+{
+	width: 100%;
+	height: 1400px;
+	background-color: #CCC;
+	display:flex;
+}
+.bl-caixa-de-info
+{
+	height: 500px;
+	width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.bl-caixa-dispositivos
+{
+	max-width: 868px;
+	min-width: 360px;
+	height: 210px;
+	background-color:#FFF;
+	margin-top: 40px;
+	padding: 160px;
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
+}
+.bl-bloco
+{
+	display:inline-block;
+}
+.bl-bloco-margem-esquerda
+{
+	margin-left: 1px;
+}
+.bl-bloco img
+{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background-color: #eee;
+	border: 1px solid #009ee3;
+}
+
+.bl-flexibiliza
+{
+	display: flex;
+	justify-content: space-between;
+}
+.bl-largura-flex
+{
+	width: 100%;
+}
+.bl-alinha-middle
+{
+	display: flex;
+	align-items: center;
+}
+.bl-alinha-middle a
+{
+	text-decoration: none;
+}
+
+
+input[type=text] {
+  border: 2px solid #009ee3;;
+  border-radius: 3px;
+  width: 100%;
+  padding: 05px 20px;
+  margin: 1px 0;
+  box-sizing: border-box;
+}
+input[type=text]:focus {
+  border: 3px solid rgb(255, 255, 255);
+}
+
+input[type=date] {
+  border: 2px solid #009ee3;;
+  border-radius: 3px;
+  width: 100%;
+  padding: 05px 20px;
+  margin: 1px 0;
+  box-sizing: border-box;
+}
+input[type=date]:focus {
+  border: 3px solid rgb(255, 255, 255);
+}
+
+input[type=email] {
+  border: 2px solid #009ee3;;
+  border-radius: 3px;
+  width: 100%;
+  padding: 05px 20px;
+  margin: 1px 0;
+  box-sizing: border-box;
+}
+input[type=email]:focus {
+  border: 3px solid rgb(255, 255, 255);
+}
+
+input[type=tel] {
+  border: 2px solid #009ee3;;
+  border-radius: 3px;
+  width: 100%;
+  padding: 05px 20px;
+  margin: 1px 0;
+  box-sizing: border-box;
+}
+input[type=tel]:focus {
+  border: 3px solid rgb(255, 255, 255);
+}
+input[type=number] {
+  border: 2px solid #009ee3;;
+  border-radius: 3px;
+  width: 100%;
+  padding: 05px 20px;
+  margin: 1px 0;
+  box-sizing: border-box;
+}
+input[type=number]:focus {
+  border: 3px solid rgb(255, 255, 255);
+}
+.bl-botao {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+.bl-botao:hover {
+  background-color: #9e9e9e;
+  color: white;
+}
+.bl-botao {
+  background-color: #009ee3;
+  border: none;
+  color: white;
+  padding: 17px 120px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+    <div class="bl-conteudo">
+        <div class="bl-caixa-de-info"><br><br><br>
+        	<div>
+            <h2>Complete com seus dados</h2>
+            </div>
+            <div class="bl-caixa-dispositivos">
+            	<div class="center">
+					<form>
+					  <div class="inputbox">
+						
+						<h4>Nome</h4>
+						<input type="text" placeholder="João" required="required">
+						<h4><br>Sobrenome</h4>
+						<input type="text" placeholder="Santos" required="required">
+						<h4><br>Data de Nascimento</h4>
+						<input type="date" placeholder="dd/mm/aaaa" required="required">
+						<h4><br>E-mail</h4>
+						<input type="email" placeholder="johndoe@email.com" required="required">
+						<h4><br>Telefone</h4>
+						<input type="tel" placeholder="(99)99999999" required="required">
+						<h4><br>CPF</h4>
+						<input type="number" placeholder="xxx.xxx.xxx.xx" required="required">
+						<h4><br>Sexo</h4>
+						<input type="radio" id="feminino" name="fav_language" value="feminino" required="required">
+						<label for="Masculino">Masculino</label><br>
+						<input type="radio" id="masculino" name="fav_language" value="masculino" required="required">
+						<label for="Feminino">Feminino</label><br>
+
+					  </div>
+					</form>
+				  </div>
+             </div>
+             <div class="bl-caixa-dispositivos">
+                <div class="bl-bloco">
+                
+                </div>
+                <div class="bl-bloco bl-bloco-margem-esquerda bl-largura-flex">
+					<div class="bl-flexibiliza">
+						<form>
+							<div class="inputbox">
+							  
+								<h4>Rua/Avenida</h4>
+								<input type="text" placeholder="Rua do Salvador" required="required">
+								<h4><br>Cep</h4>
+								<input type="number" placeholder="9999-999" required="required">
+								<h4><br>Número</h4>
+								<input type="number" placeholder="100" required="required">
+								<h4><br>Cidade</h4>
+								<input type="text" placeholder="Salvador" required="required">
+								<h4><br>Estado</h4>
+								<input type="text" placeholder="Bahia" required="required">
+								<h4><br>Bairro</h4>
+								<input type="text" placeholder="Centro" required="required">
+								<h4><br>Complemento</h4>
+								<input type="text" placeholder="" required="required">
+									
+							</div>
+						  </form> 
+					</div>
+                </div>
+            </div>
+			<br><h7>Protegido por reCAPTCHA - <b>Privacidade</b> - <b>condições</b></h7>
+			<br><br><b><button class="bl-botao">Continuar</b></button>
+			
+        </div>
+    </div>
+	
+</body>
+</html>
