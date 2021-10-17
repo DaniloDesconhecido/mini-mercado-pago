@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <title>Banco-cadastrar-conta</title>
+<script src="Javascript/Banco-cadastrar-conta.js"></script>
 <style>
 *
 {
@@ -208,17 +209,17 @@ input[type=number]:focus {
 							<div class="inputbox">
 							  
 								<h4>Rua/Avenida</h4>
-								<input type="text" placeholder="Rua do Salvador" required="required">
+								<input type="text" placeholder="Rua do Salvador" id="rua" required="required">
 								<h4><br>Cep</h4>
-								<input type="number" placeholder="9999-999" required="required">
+								<input type="number" placeholder="9999-999" id="cep"  size="10" maxlength="9" onblur="pesquisacep(this.value);" required="required">
 								<h4><br>Número</h4>
 								<input type="number" placeholder="100" required="required">
 								<h4><br>Cidade</h4>
-								<input type="text" placeholder="Salvador" required="required">
+								<input type="text" placeholder="Salvador" id="cidade" required="required">
 								<h4><br>Estado</h4>
-								<input type="text" placeholder="Bahia" required="required">
+								<input type="text" placeholder="Bahia" id="uf" required="required">
 								<h4><br>Bairro</h4>
-								<input type="text" placeholder="Centro" required="required">
+								<input type="text" placeholder="Centro" id="bairro" required="required">
 								<h4><br>Complemento</h4>
 								<input type="text" placeholder="" required="required">
 									
