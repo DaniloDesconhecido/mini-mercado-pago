@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<title>Banco-valor-a-transferir</title>
+<style>
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-family: Rubik, Arial, sans-serif;
+	font-size: 18px;
+}
+.bl-conteudo
+{
+	width: 100%;
+	height: 100vh;
+	background-color: #CCC;
+}
+.bl-caixa-de-info
+{
+	background-color: #FFF;
+	/*height: 378px;*/
+	width: 503px;
+	margin: 0 auto;
+	border-radius: 15px;
+	padding: 20px;
+}
+img[alt^=avatar]
+{
+	padding: 5px;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	background-color:rgb(235, 235, 235);
+	border: 1px solid #0CF;
+}
+.bl-campo
+{
+	outline:none;
+	border: none;
+	border-bottom: 1px solid #0CF;
+	font-size: 16px;
+	padding: 10px;
+}
+.bl-campo-valor
+{
+	outline:none;
+	border: none;
+	font-size: 25pt;
+	min-width: 25pt;
+	width: 25pt;
+	max-width: 300pt;
+	letter-spacing: 0pt;
+}
+
+.bl-centralizar
+{
+	text-align:center;
+}
+.bl-conteiner
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 60px;
+}
+.bl-lagura-de-email
+{
+	width: 300px;
+	max-height: 350px;
+}
+.bl-lagura-de-mensagem
+{
+	width: 350px;
+	max-height: 400px;
+}
+.bl-valor-aparencia
+{
+	font-size: 18pt;
+}
+.bl-botao-azul
+{
+	height: 40px;
+	width: 100px;
+	background-color: #009ee3;
+	color: #FFF;
+	font-size: 12px;
+	border: none;
+	border-radius: 15px;
+}
+.bl-centraliza-botao
+{
+	display: flex;
+	justify-content: center;
+}
+@media (max-width: 600px) 
+{
+	.bl-caixa-de-info
+	{
+		width: 80%;
+		min-width: 300px;
+	}
+	.bl-lagura-de-email
+	{
+		min-width: 100%;
+	}
+	.bl-lagura-de-mensagem
+	{
+		min-width: 80%;
+	}
+}
+</style>
+</head>
+
+<body>
+	<div>
+        <div class="bl-conteudo">
+        <form id="bl-valor-da-transferencia">
+            <div class="bl-caixa-de-info">
+                <div class="bl-conteiner">
+					<img src="../icones/Icone-Pessoa.png" alt="avatar">
+					<input type="text" id="email" name="email" class="bl-campo" placeholder="Digite o email"/>
+                </div>
+                <div class="bl-conteiner">
+                  <span class="valor-aparencia">R$</span><input type="text" class="bl-campo-valor bl-centralizar" id="valor" placeholder="0" maxlength="12"/>
+                </div>
+                <div class="bl-conteiner">
+                	<input type="text" id="mensagem" name="mensagem" class="bl-campo bl-lagura-de-mensagem" placeholder="Você quer deixar uma mensagem"/>
+                    <input type="hidden" id="auxiliar" name="auxiliar"/>
+                </div>
+				<div class="bl-centraliza-botao">
+					<button id="enviar" class="bl-botao-azul">Enviar</button>
+				</div>
+            </div>
+        </div>
+        </form>
+    </div>
+    <script>
+		function numeros(tecla)
+		{
+			switch(tecla)
+			{
+				case 'Numpad0':
+				return true;
+				case 'Numpad1':
+				return true;
+				case 'Numpad2':
+				return true;
+				case 'Numpad3':
+				return true;
+				case 'Numpad4':
+				return true;
+				case 'Numpad5':
+				return true;
+				case 'Numpad6':
+				return true;
+				case 'Numpad7':
+				return true;
+				case 'Numpad8':
+				return true;
+				case 'Numpad9':
+				return true;
+			}
+			switch(tecla)
+			{
+				case 'Digit0':
+				return true;
+				case 'Digit1':
+				return true;
+				case 'Digit2':
+				return true;
+				case 'Digit3':
+				return true;
+				case 'Digit4':
+				return true;
+				case 'Digit5':
+				return true;
+				case 'Digit6':
+				return true;
+				case 'Digit7':
+				return true;
+				case 'Digit8':
+				return true;
+				case 'Digit9':
+				return true;
+			}
+			return false;
+		}
+		var campo_valor = document.getElementById('valor');
+		var outro_campo = document.getElementsByClassName('bl-campo');
+		window.onload = function()
+		{
+			campo_valor.value = "";
+			outro_campo[0].value = "";
+			outro_campo[1].value = "";
+		}
+		function moeda(z)
+		{
+			v = z.value;
+			v=v.replace(/\D/g,"");
+			v=v.replace(/(\d{1})(\d{1})$/,"$1,$2");
+			z.value = v;
+		}
+	
+		campo_valor.onkeypress = function(e)
+		{
+			if(!/[0-9]/.test(e.key) && !numeros(e.code))
+			{
+				return false;
+			}
+		}
+		campo_valor.onkeydown = function(e)
+		{
+			if(this.value.length == 0)
+			{
+				this.style.width = "25pt";
+			}
+			else
+			{
+				if(this.value.length < 12)
+				{
+					moeda(this);
+					var res = this.value.length*15+10;
+					this.style.width = (res)+"pt";
+				}
+			}
+		}
+    </script>
+</body>
+</html>
