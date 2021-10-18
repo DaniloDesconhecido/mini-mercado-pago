@@ -133,8 +133,8 @@ img[alt^=avatar]
                   <span class="valor-aparencia">R$</span><input type="text" class="bl-campo-valor bl-centralizar" id="valor" placeholder="0" maxlength="12"/>
                 </div>
                 <div class="bl-conteiner">
-                	<input type="text" id="mensagem" name="mensagem" class="bl-campo bl-lagura-de-mensagem" placeholder="Você quer deixar uma mensagem"/>
-                    <input type="hidden" id="auxiliar" name="auxiliar"/>
+                	<input type="text" id="mensagem" name="mensagem" class="bl-campo bl-lagura-de-mensagem" placeholder="Você quer deixar uma mensagem?"/>
+                    <input type="hidden" id="auxiliar" name="auxiliar" autocomplete="off"/>
                 </div>
 				<div class="bl-centraliza-botao">
 					<button id="enviar" class="bl-botao-azul">Enviar</button>
@@ -169,8 +169,6 @@ img[alt^=avatar]
 		{
 			v = z.value;
 			v=v.replace(/\D/g,"");
-			v=v.replace(/(\d{1})(\d{8})$/,"$1.$2");
-			v=v.replace(/(\d{1})(\d{5})$/,"$1.$2");
 			v=v.replace(/(\d{1})(\d{2})$/,"$1,$2");
 			z.value = v;
 		}
