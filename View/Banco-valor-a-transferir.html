@@ -174,7 +174,10 @@ img[alt^=avatar]
 			v=v.replace(/(\d{1})(\d{2})$/,"$1,$2");
 			z.value = v;
 		}
-	
+		campo_valor.onpaste = function()
+		{
+			return false;
+		}
 		campo_valor.onkeypress = function(e)
 		{
 			if(!/[0-9]/.test(e.key) && !numeros(e))
