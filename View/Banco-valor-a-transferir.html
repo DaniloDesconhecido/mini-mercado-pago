@@ -144,56 +144,19 @@ img[alt^=avatar]
         </form>
     </div>
     <script>
-		function numeros(tecla)
-		{
-			switch(tecla)
-			{
-				case 'Numpad0':
-				return true;
-				case 'Numpad1':
-				return true;
-				case 'Numpad2':
-				return true;
-				case 'Numpad3':
-				return true;
-				case 'Numpad4':
-				return true;
-				case 'Numpad5':
-				return true;
-				case 'Numpad6':
-				return true;
-				case 'Numpad7':
-				return true;
-				case 'Numpad8':
-				return true;
-				case 'Numpad9':
-				return true;
-			}
-			switch(tecla)
-			{
-				case 'Digit0':
-				return true;
-				case 'Digit1':
-				return true;
-				case 'Digit2':
-				return true;
-				case 'Digit3':
-				return true;
-				case 'Digit4':
-				return true;
-				case 'Digit5':
-				return true;
-				case 'Digit6':
-				return true;
-				case 'Digit7':
-				return true;
-				case 'Digit8':
-				return true;
-				case 'Digit9':
-				return true;
-			}
-			return false;
-		}
+		function numeros(e) {
+        var charCode = e.charCode ? e.charCode : e.keyCode;
+        // charCode 8 = backspace   
+        // charCode 9 = tab
+        if (charCode != 8 && charCode != 9) {
+            // charCode 48 equivale a 0   
+            // charCode 57 equivale a 9
+            if (charCode < 48 || charCode > 57) {
+                return false;
+            }
+        }
+    }
+	
 		var campo_valor = document.getElementById('valor');
 		var outro_campo = document.getElementsByClassName('bl-campo');
 		window.onload = function()
@@ -206,18 +169,20 @@ img[alt^=avatar]
 		{
 			v = z.value;
 			v=v.replace(/\D/g,"");
-			v=v.replace(/(\d{1})(\d{1})$/,"$1,$2");
+			v=v.replace(/(\d{1})(\d{8})$/,"$1.$2");
+			v=v.replace(/(\d{1})(\d{5})$/,"$1.$2");
+			v=v.replace(/(\d{1})(\d{2})$/,"$1,$2");
 			z.value = v;
 		}
 	
 		campo_valor.onkeypress = function(e)
 		{
-			if(!/[0-9]/.test(e.key) && !numeros(e.code))
+			if(!/[0-9]/.test(e.key) && !numeros(e))
 			{
 				return false;
 			}
 		}
-		campo_valor.onkeydown = function(e)
+		campo_valor.oninput = function(e)
 		{
 			if(this.value.length == 0)
 			{
