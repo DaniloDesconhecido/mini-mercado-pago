@@ -174,63 +174,63 @@ input[type=number]:focus {
             </div>
             <div class="bl-caixa-dispositivos">
             	<div class="center">
-					<form>
-					  <div class="inputbox">
+					<form method="post" action="../Controller/IBanco-cadastrar-conta.php">
+						<div class="inputbox">
 						
-						<h4>Nome</h4>
-						<input type="text" placeholder="João" required="required">
-						<h4><br>Sobrenome</h4>
-						<input type="text" placeholder="Santos" required="required">
-						<h4><br>Data de Nascimento</h4>
-						<input type="date" placeholder="dd/mm/aaaa" required="required">
-						<h4><br>E-mail</h4>
-						<input type="email" placeholder="johndoe@email.com" required="required">
-						<h4><br>Telefone</h4>
-						<input type="tel" placeholder="(99)99999999" required="required">
-						<h4><br>CPF</h4>
-						<input type="number" placeholder="xxx.xxx.xxx.xx" required="required">
-						<h4><br>Sexo</h4>
-						<input type="radio" id="feminino" name="fav_language" value="feminino" required="required">
-						<label for="Masculino">Masculino</label><br>
-						<input type="radio" id="masculino" name="fav_language" value="masculino" required="required">
-						<label for="Feminino">Feminino</label><br>
-
+							<h4>Nome</h4>
+							<input type="text" placeholder="João" name="nome" required="required">
+							<h4><br>Sobrenome</h4>
+							<input type="text" placeholder="Santos" name="sobrenome" required="required">
+							<h4><br>Data de Nascimento</h4>
+							<input type="date" placeholder="dd/mm/aaaa" name="datadenascimento" required="required">
+							<h4><br>E-mail</h4>
+							<input type="email" placeholder="johndoe@email.com" name="email" required="required">
+							<h4><br>Telefone</h4>
+							<input type="tel" placeholder="(99)99999999" name="telefone" required="required">
+							<h4><br>CPF</h4>
+							<input type="number" placeholder="xxx.xxx.xxx.xx" name="cpf" required="required">
+							<h4><br>Sexo</h4>
+							<input type="radio" id="feminino" name="sexo" value="F" required="required">
+							<label for="Masculino">Masculino</label><br>
+							<input type="radio" id="masculino" name="sexo" value="M" required="required">
+							<label for="Feminino">Feminino</label><br>
+	
+						  </div>
+						
 					  </div>
-					</form>
-				  </div>
-             </div>
-             <div class="bl-caixa-dispositivos">
-                <div class="bl-bloco">
-                
-                </div>
-                <div class="bl-bloco bl-bloco-margem-esquerda bl-largura-flex">
-					<div class="bl-flexibiliza">
-						<form>
-							<div class="inputbox">
-							  
-								<h4>Rua/Avenida</h4>
-								<input type="text" placeholder="Rua do Salvador" id="rua" required="required">
-								<h4><br>Cep</h4>
-								<input type="number" placeholder="9999-999" id="cep"  size="10" maxlength="9" onblur="pesquisacep(this.value);" required="required">
-								<h4><br>Número</h4>
-								<input type="number" placeholder="100" required="required">
-								<h4><br>Cidade</h4>
-								<input type="text" placeholder="Salvador" id="cidade" required="required">
-								<h4><br>Estado</h4>
-								<input type="text" placeholder="Bahia" id="uf" required="required">
-								<h4><br>Bairro</h4>
-								<input type="text" placeholder="Centro" id="bairro" required="required">
-								<h4><br>Complemento</h4>
-								<input type="text" placeholder="" required="required">
-									
-							</div>
-						  </form> 
+				 </div>
+				 <div class="bl-caixa-dispositivos">
+					<div class="bl-bloco">
+					
+					</div>
+					<div class="bl-bloco bl-bloco-margem-esquerda bl-largura-flex">
+						<div class="bl-flexibiliza">
+							
+								<div class="inputbox">
+								  
+									<h4>Rua/Avenida</h4>
+									<input type="text" placeholder="Rua do Salvador" name="rua" id="rua" required="required">
+									<h4><br>Cep</h4>
+									<input type="number" placeholder="9999-999" name="cep" id="cep"  size="10" maxlength="9" onblur="pesquisacep(this.value);" required="required">
+									<h4><br>Número</h4>
+									<input type="number" placeholder="100" name="numero" required="required">
+									<h4><br>Cidade</h4>
+									<input type="text" placeholder="Salvador" name="cidade" id="cidade" required="required">
+									<h4><br>Estado</h4>
+									<input type="text" placeholder="Bahia" name="estado" id="uf" required="required">
+									<h4><br>Bairro</h4>
+									<input type="text" placeholder="Centro" name="bairro" id="bairro" required="required">
+									<h4><br>Complemento</h4>
+									<input type="text" placeholder="" name="complemento" required="required">
+										
+								</div>
+						  
 					</div>
                 </div>
             </div>
 			<br><h7>Protegido por reCAPTCHA - <b>Privacidade</b> - <b>condições</b></h7>
-			<br><br><b><button class="bl-botao">Continuar</b></button>
-			
+			<br><br><b><input type="submit" class="bl-botao" value="Continuar">
+		</form> 
         </div>
     </div>
 	

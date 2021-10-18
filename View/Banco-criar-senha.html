@@ -130,23 +130,22 @@ p{
           <h3>Criar Senha</h3>
             <div class="bl-caixa-dispositivos">
             	<div class="center">
-					<form>
+					<form method="POST" action="../Controller/IBanco-criar-senha.php">
 					  <div class="inputbox">
 						  <label for="senha"></label><b>Senha</b></label><br>
                 <input type="password" id="senha" name="senha" placeholder="xxxxxxxxxx" minlength="20" required><br><br>
-                <label for="repitasenha"><b>Repita Senha</b></label><br>
-                <input type="password" id="repitasenha" name="repitasenha" placeholder="xxxxxxxxxx" minlength="20" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W+)(?=^.{8,50}$).*$" required><br><br>
+                
                 <h4>Sua senha precisa ter:</h4>
                 <p>Oito caracteres no mínimo</p>
                 <p>Letras, números e ao menos um caractere especial</p>
                 <p>No máximo 20 caracteres</p>
 					  </div>
-					</form>
+					
 				  </div>
              </div>
-			 <br><br><button class="bl-botao">Continuar</b></button>
+			 <br><br><input type="submit" class="bl-botao" value="Continuar">
              
-			
+			</form>
         </div>
     </div>
 	
