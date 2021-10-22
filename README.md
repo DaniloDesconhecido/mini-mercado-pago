@@ -1,20 +1,20 @@
 # mini-mercado-pago
 
-#Desrição
+# Desrição
 
 
-#Técnologia ultilizada
-  *HTML
-  *CSS
-  *BOOSTRAP
-  *JAVASCRIPT
-  *PHP
+# Técnologia ultilizada
+  * HTML
+  * CSS
+  * BOOSTRAP
+  * JAVASCRIPT
+  * PHP
   
   ##Autor
-    *DANILO
-    *ITALO
-    *GUILHERME
-    *TIAGO
+    * DANILO
+    * ITALO
+    * GUILHERME
+    * TIAGO
     
     
   
