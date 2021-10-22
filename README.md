@@ -10,11 +10,11 @@
   * JAVASCRIPT
   * PHP
   
-  ##Autor
-    * DANILO
-    * ITALO
-    * GUILHERME
-    * TIAGO
+# Autor
+  * DANILO
+  * ITALO
+  * GUILHERME
+  * TIAGO
     
     
   
