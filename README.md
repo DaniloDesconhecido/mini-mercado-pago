@@ -3,7 +3,7 @@
 # Desrição
 
 
-# Técnologia ultilizada
+# Tecnologia ultilizada
   * HTML
   * CSS
   * BOOSTRAP
