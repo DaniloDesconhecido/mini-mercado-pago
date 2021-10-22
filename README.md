@@ -1,20 +1,22 @@
 # mini-mercado-pago
+Versão minimizada do Mercado Pago.
 
-# Desrição
+**Justificativa**
 
+Esse projeto faz parte da atividade avaliativa da disciplina do Projeto Integrador, do curso Qualifica +.
 
-# Tecnologia utilizada
+**Tecnologias utilizadas**
   * HTML
   * CSS
   * BOOSTRAP
   * JAVASCRIPT
   * PHP
   
-# Autor
-  * DANILO
-  * ITALO
-  * GUILHERME
-  * TIAGO
+**Autores**
+  * Danilo
+  * Italo
+  * Guilherme
+  * Tiago
     
     
   
