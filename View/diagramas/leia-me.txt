@@ -1,0 +1,1 @@
+https://app.diagrams.net/?libs=general;flowchart //link para abrir os diagramas
