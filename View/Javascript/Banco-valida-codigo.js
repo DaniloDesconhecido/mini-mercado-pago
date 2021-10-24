@@ -1,10 +1,18 @@
-function codigo(){
+function codigo()
+{
 				var arranjo = [false, false, false, false, false, false];
 				var lista = document.getElementsByTagName('input');
 				var botao = document.getElementById('enviar');
 				botao.style.background = 'rgba(0,0,0,0.1)';
 				botao.disabled = true;
 				
+				lista[0].onkeypress = function(e)
+				{
+					if(this.value.length == 1 || !/[0-9]/.test(e.key))
+					{
+						return false;
+					}
+				};
 				lista[0].onkeyup = function(e)
 				{
 					if(/[0-9]/.test(e.key) && /[0-9]/.test(this.value) == true)
@@ -18,6 +26,13 @@ function codigo(){
 						arranjo[0] = false;
 						lista[0].style.border = '1px solid red';
 						lista[0].style.outline = 'none';
+					}
+				};
+				lista[1].onkeypress = function(e)
+				{
+					if(this.value.length == 1 || !/[0-9]/.test(e.key))
+					{
+						return false;
 					}
 				};
 				lista[1].onkeyup = function(e)
@@ -35,6 +50,13 @@ function codigo(){
 						lista[1].style.outline = 'none';
 					}
 				};
+				lista[2].onkeypress = function(e)
+				{
+					if(this.value.length == 1 || !/[0-9]/.test(e.key))
+					{
+						return false;
+					}
+				};
 				lista[2].onkeyup = function(e)
 				{
 					if(/[0-9]/.test(e.key) && /[0-9]/.test(this.value) == true)
@@ -48,6 +70,13 @@ function codigo(){
 						arranjo[2] = false;
 						lista[2].style.border = '1px solid red';
 						lista[2].style.outline = 'none';
+					}
+				};
+				lista[3].onkeypress = function(e)
+				{
+					if(this.value.length == 1 || !/[0-9]/.test(e.key))
+					{
+						return false;
 					}
 				};
 				lista[3].onkeyup = function(e)
@@ -65,6 +94,13 @@ function codigo(){
 						lista[3].style.outline = 'none';
 					}
 				};
+				lista[4].onkeypress = function(e)
+				{
+					if(this.value.length == 1 || !/[0-9]/.test(e.key))
+					{
+						return false;
+					}
+				};
 				lista[4].onkeyup = function(e)
 				{
 					if(/[0-9]/.test(e.key) && /[0-9]/.test(this.value) == true)
@@ -78,6 +114,13 @@ function codigo(){
 						arranjo[4] = false;
 						lista[4].style.border = '1px solid red';
 						lista[4].style.outline = 'none';
+					}
+				};
+				lista[5].onkeypress = function(e)
+				{
+					if(this.value.length == 1 || !/[0-9]/.test(e.key))
+					{
+						return false;
 					}
 				};
 				lista[5].onkeyup = function(e)
@@ -114,13 +157,13 @@ function codigo(){
 						lista[5].style.outline = 'none';
 					}
 				};			
-                
 				contador();
 }
 
-function contador(){
-    var tela = document.getElementById('reenviar');
-	tela.disabled=true;
+function contador()
+{
+    	var tela = document.getElementById('reenviar');
+	tela.disabled = true;
 	var minuto = 1;
 	var segundo = 1;
 
@@ -128,22 +171,29 @@ function contador(){
 					
         segundo--;
 
-        if(segundo <= 9 && segundo >= 1 || minuto == 1 && segundo <= 9){
+        if(segundo <= 9 && segundo >= 1 || minuto == 1 && segundo <= 9)
+	{
             tela.value = "reenviar em "+ minuto +":"+0+segundo;
-         }else if(segundo == 0 && minuto == 0){
-             tela.disabled=false;
-             tela.value = "reenviar";
-          }else{
-              tela.value = "reenviar em "+ minuto +":"+segundo;
-          }	
+        }
+	else if(segundo == 0 && minuto == 0)
+	{
+            tela.disabled=false;
+            tela.value = "reenviar";
+        }
+	else
+	{
+            tela.value = "reenviar em "+ minuto +":"+segundo;
+        }	
                     
-        if(segundo == 0 && minuto == 0){
+        if(segundo == 0 && minuto == 0)
+	{
             clearInterval(x);
         }
-        if(segundo == 0){   
-            minuto--;                     
-			segundo = 60;
-		}
+        if(segundo == 0)
+	{   
+            minuto--;
+		segundo = 60;
+	}
 	}, 1000);
 }
 
