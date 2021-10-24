@@ -53,7 +53,8 @@ body
 	border-radius: 15px;
 }
 
-.bl-botao-azul:disabled{
+.bl-botao-azul:disabled
+{
     background: rgba(0,0,0,0.1);
 }
 
@@ -67,4 +68,17 @@ body
 .bl-espacamento-texto
 {
 	padding-top: 20px;
+}
+/* Chrome, Safari, Edge, Opera */
+.bl-espacamento input[type=number]::-webkit-outer-spin-button,
+.bl-espacamento input[type=number]::-webkit-inner-spin-button 
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.bl-espacamento input[type=number]
+{
+  -moz-appearance: textfield;
 }
