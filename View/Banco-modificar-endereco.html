@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width initial-scale=0.75">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<title>Banco-modificar-endereço</title>
+<style>
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-family: Rubik, Arial, sans-serif;
+	font-size: 18px;
+}
+.bl-conteudo
+{
+	width: 100%;
+	height: 100vh;
+	background-color: #CCC;
+}
+.bl-caixa-de-info
+{
+	width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 15px;
+	background-color: #FFF;
+	min-width: 350px;
+}
+.bl-conteiner
+{
+	margin: 0 auto;
+	width: 600px;
+}
+.bl-form-campo
+{
+	height: 20px;
+	border: 1px solid #00b1ea;
+	border-radius: 10px;
+	padding: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+	font-size: 16px;
+	outline: none;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: 600;
+}
+.bl-form-campo-lista
+{
+	height: auto;
+}
+.bl-espacamento-campos
+{
+	height: auto;
+	margin-bottom: 15px;
+}
+.bl-espacamento-campos label, input, select
+{
+	display: block;
+}
+.bl-espacamento-campos div, input[type="checkbox"]
+{
+	display: inline-block;
+}
+.bl-espacamento-campos label
+{
+	color: #7e7e7e;
+	font-size: small;
+}
+.bl-texto-auxiliar
+{
+	color: #00a9cd;
+}
+.bl-texto-auxiliar > a:visited
+{
+	color: #00a9cd;
+}
+a
+{
+	text-decoration: none;
+}
+.bl-botao-azul
+{
+	height: 40px;
+	width: 100px;
+	background-color: #009ee3;
+	color: #FFF;
+	font-size: 16px;
+	border: none;
+	border-radius: 15px;
+	display: inline-block;
+	cursor: pointer;
+}
+.bl-botao-transparente
+{
+	height: 40px;
+	width: 100px;
+	background-color: #FFF;
+	color: #009ee3;
+	font-size: 16px;
+	border: none;
+	border-radius: 15px;
+	display: inline-block;
+	cursor: pointer;
+}
+.bl-form-campo::placeholder 
+{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+  opacity: 0.40; /* Firefox */
+}
+
+.bl-form-campo:-ms-input-placeholder 
+{ /* Internet Explorer 10-11 */
+	opacity: 0.40;
+}
+
+.bl-form-campo::-ms-input-placeholder 
+{ /* Microsoft Edge */
+	opacity: 0.40;
+}
+.bl-largura-nome
+{
+	width: 80%;
+}
+@media (max-width: 600px)
+{
+	.bl-caixa-de-info
+	{
+		width: 80%;
+	}
+	.bl-conteiner
+	{
+		width: 100%;
+	}
+	.bl-espacamento-campos div, input[type="checkbox"]
+	{
+		display: inline-block;
+		margin-bottom: 15px;
+	}
+}
+.bl-contorno-vermelho
+{
+	border: 1px solid red;
+}
+</style>
+</head>
+
+<body>
+    <div class="bl-conteudo">
+		<div class="bl-conteiner">
+			<div>
+				<h3>Adicione um novo endereço ou modifique</h3>
+			</div>
+			<div class="bl-caixa-de-info">
+				<div class="bl-caixa-arrendondada">
+					<form action="#" method="post" enctype="application/x-www-form-urlencoded" id="form_endereco" name="form_endereco">
+					<div class="bl-espacamento-campos">
+						<label for="nome">Nome</label>
+						<input type="text" maxlength="50" name="nome" id="nome" class="bl-form-campo bl-largura-nome" placeholder="Jhon Doe"/>
+					</div>
+					<div class="bl-espacamento-campos">
+						<div>
+							<label for="cep" >Cep <span class="bl-texto-auxiliar"><a href="https://buscacepinter.correios.com.br/app/endereco/index.php">Não sei meu CEP</a></span></label>
+							<input type="text" maxlength="9" name="cep" id="cep" class="bl-form-campo" placeholder="00000-0000"/>
+						</div>
+						<div>
+							<label for="estado">Estado</label>
+							<select name="estado" id="estado" class="bl-form-campo bl-form-campo-lista" >
+								<option value="Acre">Acre (AC)</option>
+								<option value="Alagoas">Alagoas (AL)</option>
+								<option value="Amapá">Amapá (AP)</option>
+								<option value="Amazonas">Amazonas (AM)</option>
+								<option value="Bahia">Bahia (BA)</option>
+								<option value="Ceará">Ceará (CE)</option>
+								<option value="Distrito Federal">Distrito Federal (DF)</option>
+								<option value="Espírito Santo">Espírito Santo (ES)</option>
+								<option value="Goiás">Goiás (GO)</option>
+								<option value="Maranhão">Maranhão (MA)</option>
+								<option value="Mato Grosso">Mato Grosso (MT)</option>
+								<option value="Mato Grosso do Sul">Mato Grosso do Sul (MS)</option>
+								<option value="Minas Gerais">Minas Gerais (MG)</option>
+								<option value="Pará">Pará (PA)</option>
+								<option value="Paraíba">Paraíba (PB)</option>
+								<option value="Paraná">Paraná (PR)</option>
+								<option value="Pernambuco">Pernambuco (PE)</option>
+								<option value="Piauí">Piauí (PI)</option>
+								<option value="Rio de Janeiro">Rio de Janeiro (RJ)</option>
+								<option value="Rio Grande do Norte">Rio Grande do Norte (RN)</option>
+								<option value="Rio Grande do Sul">Rio Grande do Sul (RS)</option>
+								<option value="Rondônia">Rondônia (RO)</option>
+								<option value="Roraima">Roraima (RR)</option>
+								<option value="Santa Catarina">Santa Catarina (SC)</option>
+								<option value="São Paulo">São Paulo (SP)</option>
+								<option value="Sergipe">Sergipe (SE)</option>
+								<option value="Tocantins">Tocantins (TO)</option>
+								<option value="vazio" selected>selecione estado</option>
+							</select>
+						</div>
+					</div>
+					<div class="bl-espacamento-campos">
+						<div>
+							<label for="cidade">Cidade</label>
+							<input type="text" maxlength="30" name="cidade" id="cidade" class="bl-form-campo" placeholder="Salvador"/>
+						</div>
+						<div>
+							<label for="bairro">Bairro</label>
+							<input type="text" maxlength="50" name="bairro" id="bairro" class="bl-form-campo" placeholder="Centro"/>
+						</div>
+					</div>
+					<div class="bl-espacamento-campos">
+						<label for="rua_avenida" >Rua/Avenida</label>
+						<input type="text" maxlength="50" name="rua_avenida" id="rua_avenida" class="bl-form-campo" placeholder="Avenida A"/>
+					</div>
+					<div class="bl-espacamento-campos">
+						<label for="numero">Número
+							<span class="bl-texto-auxiliar">
+								<input type="checkbox" id="checkbox_numero" name="checkbox_numero"/>
+								<span>Sem número</span>
+							</span>
+						</label>
+						<input type="text" maxlength="6" name="numero" id="numero" class="bl-form-campo" placeholder="999999"/>
+					</div>
+					<div class="bl-espacamento-campos">
+						<label for="complemento" >Complemento</label>
+						<input type="text" maxlength="50" name="complemento" id="complemento" class="bl-form-campo" />
+					</div>
+					<div class="bl-espacamento-campos"> 
+						<label for="telefone">Telefone de contato</label>
+						<input type="text" maxlength="12" name="telefone" id="telefone" class="bl-form-campo" placeholder="(75)99999999"/>
+					</div>
+					<div>
+						<input type="submit" name="enviar" id="enviar" class="bl-botao-azul" value="enviar"/>
+						<input type="button" name="cancelar" id="cancelar" class="bl-botao-transparente" value="cancelar"/>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+    </div>
+	<script>
+		window.onload = function()
+		{
+			var limpa = document.getElementsByClassName("bl-form-campo");
+			for(i = 0; i < limpa.length; i++)
+			{
+				limpa[i].value = "";
+			}
+		};
+		objeto_endereco = {
+			nome : "",
+			cep:"",
+			estado: "",
+			cidade:"",
+			bairro: "",
+			rua_avenida: "",
+			numero: "",
+			complemento: "",
+			telefone: ""
+		};
+		function apenas_letras(evento)
+		{
+			return !/[A-Za-z áéíóúÁÉÍÓÚàÀçÇêÊôÔãÃõÕüïöä]/.exec(evento.key);
+		};
+		let nome_auxiliar = document.getElementById("nome");
+		nome_auxiliar.onkeypress = function(e)
+		{
+			if(!/[A-Za-z áéíóúÁÉÍÓÚàÀçÇêÊôÔãÃõÕüïöä]/.exec(e.key))
+			{
+				this.style.borderColor = "red";
+				return false;
+			}
+		};
+		nome_auxiliar.oninput = function()
+		{
+			objeto_endereco.nome = nome_auxiliar.value;
+			this.style.borderColor = "#00b1ea";
+		};
+		let cep_auxiliar = document.getElementById("cep");
+		cep_auxiliar.onkeypress = function(e)
+		{
+			if(!/[0-9]/.exec(e.key))
+			{
+				this.style.borderColor = "red";
+				return false;
+			}
+			else
+			{
+				objeto_endereco.cep = cep_auxiliar.value;
+				this.style.borderColor = "#00b1ea";
+			}
+			cep_auxiliar.value = cep_auxiliar.value.replace(/(\d{5})(\d{0})$/,"$1-$2");
+		};
+		let estado_auxiliar = document.getElementById("estado");
+		estado_auxiliar.onchange = function(e)
+		{
+			if(estado_auxiliar.value == "")
+			{
+				window.alert("falta escolher o estado");
+			}
+			else
+			{
+				objeto_endereco.estado = estado_auxiliar.value;
+				this.style.borderColor = "#00b1ea";
+			}
+		};
+		let cidade_auxiliar = document.getElementById("cidade");
+		cidade_auxiliar.onkeypress = function(e)
+		{
+			if(!/[A-Za-z áéíóúÁÉÍÓÚàÀçÇêÊôÔãÃõÕüïöä]/.exec(e.key))
+			{
+				this.style.borderColor = "red";
+				return false;
+			}
+		};
+		cidade_auxiliar.oninput = function()
+		{
+			objeto_endereco.cidade = cidade_auxiliar.value;
+			this.style.borderColor = "#00b1ea";
+		};
+		let bairro_auxiliar = document.getElementById("bairro");
+		bairro_auxiliar.onchange = function(e)
+		{
+			if(bairro_auxiliar.value.lenght == 0)
+			{
+				this.style.borderColor = "red";
+				window.alert("falta escolher o bairro");
+			}
+			else
+			{
+				objeto_endereco.bairro = bairro_auxiliar.value;
+				this.style.borderColor = "#00b1ea";
+			}
+		};
+		let rua_avenida_auxiliar = document.getElementById("rua_avenida");
+		rua_avenida_auxiliar.onchange = function(e)
+		{
+			if(rua_avenida_auxiliar.value.lenght == 0)
+			{
+				this.style.borderColor = "red";
+				window.alert("falta escolher a rua ou avenida");
+			}
+			else
+			{
+				objeto_endereco.rua_avenida = rua_avenida_auxiliar.value;
+				this.style.borderColor = "#00b1ea";
+			}
+		};
+		let checkbox_numero = document.getElementById("checkbox_numero");
+		let numero_auxiliar = document.getElementById("numero");
+		checkbox_numero.onclick = numero_auxiliar.onclick = function()
+		{
+			if(checkbox_numero.checked == true)
+			{
+				numero_auxiliar.disabled = true;
+				numero_auxiliar.style.opacity = "0.2";
+				numero_auxiliar.value = "0";
+			}
+			else
+			{
+				numero_auxiliar.disabled = false;
+				numero_auxiliar.style.opacity = "1";
+			}
+			numero_auxiliar.onkeypress = function(e)
+			{
+				if(!/[0-9]/.exec(e.key))
+				{
+					this.style.borderColor = "red";
+					return false;
+				}
+				else
+				{
+					objeto_endereco.numero = numero_auxiliar.value;
+					this.style.borderColor = "#00b1ea";
+				}
+			}
+		};
+		let complemento_auxiliar = document.getElementById("complemento");
+		complemento_auxiliar.onchange = function(e)
+		{
+			if(/[A-Za-z áéíóúÁÉÍÓÚàÀçÇêÊôÔãÃõÕüïöä 0-9]/.exec(e.key))
+			{
+				objeto_endereco.complemento = complemento_auxiliar.value;
+				this.style.borderColor = "#00b1ea";
+			}
+		}
+		let telefone_auxiliar = document.getElementById("telefone");
+		telefone_auxiliar.onkeypress = function(e)
+		{
+			if(!/[0-9]/.exec(e.key))
+			{
+				this.style.borderColor = "red";
+				return false;
+			}
+			else
+			{
+				objeto_endereco.telefone = telefone_auxiliar.value;
+				this.style.borderColor = "#00b1ea";
+			}
+			telefone_auxiliar.value = telefone_auxiliar.value.replace(/^(\d{2})$/,"($1)");
+		};
+		var botao_enviar = document.getElementById("enviar");
+		botao_enviar.onclick = function(e)
+		{
+			var dados = JSON.stringify(objeto_endereco);
+			var codbase64 = window.btoa(dados);//passe este valor para a url destinatária do formulário
+			e.preventDefault();
+		};
+	</script>
+</body>
+</html>
