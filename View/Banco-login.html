@@ -148,22 +148,22 @@ body
         <div class="bl-caixa-de-info">
         <h3>Olá! Para continuar digite o seu telefone, e-mail ou usuário</h3>
 			<div class="bl-espacamento-texto">
-				<form id="form1" name="form1" method="post" enctype="application/x-www-form-urlencoded">
+				<form id="form1" name="form1" method="post" action="../Controller/IBanco-login.php" enctype="application/x-www-form-urlencoded">
 					<div class="bl-espacamento-campos">
 						<div class="bl-bloco">
 						<label for="identificacao">Telefone, e-mail ou usuário</label>
-						<input type="text" class="bl-codigo-campo" maxlength="50" id="identificacao" placeholder="example@email.com"/>
+						<input type="text" class="bl-codigo-campo" name="usuario" maxlength="50" id="identificacao" placeholder="example@email.com"/>
 						</div>
 						<div class="bl-bloco">
 						<label for="senha">Senha</label>
-						<input type="password" class="bl-codigo-campo" maxlength="50" id="senha"/>
+						<input type="password" class="bl-codigo-campo" name="senha" maxlength="50" id="senha"/>
 						</div>
 					</div>
 					<div class="bl-espacamento">
 						<input type="submit" id="entrar" value="Entrar" class="bl-botao-azul" />
 					</div>
 					 <div class="bl-espacamento_links">
-						<a href="#" title="Criar Conta">Criar Conta</a>
+						<a href="Banco-cadastrar-conta.html" title="Criar Conta">Criar Conta</a>
 						<a href="#" title="Perdi a Senha">Perdi a Senha</a>
 					</div>
 				</form>

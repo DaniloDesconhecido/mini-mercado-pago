@@ -13,9 +13,8 @@
                 $p_sql->bindValue(":novoemail", $novoemail);                
                 $p_sql->bindValue(":email", $email);
                 
-                return $p_sql->execute();     
-                
-                
+                return $p_sql->execute();
+                                
                 } catch (PDOException $erro) {
                     echo "Erro na conexão:" . $erro->getMessage();             
                 }
@@ -39,8 +38,11 @@
         }
 
         public function AlterarUsuario(){
+            try {
 
-        }
-        
+            }catch(PDOException $erro){
+                echo "Erro na conexão: ".$erro->getMessage();
+            }
+        }        
     }    
 ?>
