@@ -190,7 +190,7 @@ input[type=number]
         	<div>
             <h3>Complete com seus dados</h3>
             </div>
-			<form method="post" action="../Controller/IBanco-cadastrar-conta.php">
+			<form method="post" action="../Controller/IBanco-cadastrar-conta.php" id="form_cadastro">
             <div class="bl-caixa-dispositivos">
             	<div class="center">
 					<div class="inputbox">
@@ -280,7 +280,7 @@ input[type=number]
 		<script>
 		function onSubmit(token) 
 		{
-			document.getElementById("form1").submit();
+			document.getElementById("form_cadastro").submit();
 		}
 		</script>
 		<button class="g-recaptcha" data-sitekey="6LfHp-8cAAAAALO7SQTPIj7kXJVWXrkbr3qb_8ve" data-callback='onSubmit' data-action='submit'>
