@@ -14,13 +14,13 @@
                 $result =$p_sql->fetch(\PDO::FETCH_ASSOC);
 
                 if($result > 0){
-                    echo "Login efetuado";
+                    return "Login Correto";
                 }else{                    
-                    echo "Email ou senha incorreta";
+                    return "Email ou senha incorreta";
                 }
                                 
                 } catch (PDOException $erro) {
-                    echo "Erro na conexão:" . $erro->getMessage();             
+                    return "Erro na conexão:" . $erro->getMessage();             
                 }
         }
     }

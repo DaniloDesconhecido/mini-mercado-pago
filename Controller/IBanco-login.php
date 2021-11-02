@@ -6,5 +6,5 @@
 
     $login = new BancoLogin();
 
-    $login->verificarLogin($usuario,$senha);
+    echo $login->verificarLogin($usuario,$senha);
 ?>
