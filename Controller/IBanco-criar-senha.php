@@ -8,17 +8,20 @@
 
     $cadastrar->setsenha(filter_input(INPUT_POST,"senha", FILTER_SANITIZE_STRING));   
    
-   echo $banco->InserirUsuario($_SESSION["nome"], $_SESSION["sobrenome"], $_SESSION["datadenascimento"], 
+   $resul1 = $banco->InserirUsuario($_SESSION["nome"], $_SESSION["sobrenome"], $_SESSION["datadenascimento"], 
                                  $_SESSION["telefone"], $_SESSION["cpf"],$_SESSION["sexo"]);
     
-    echo $banco->InserirConta($_SESSION["email"], $cadastrar->getsenha());
+    $resul2 = $banco->InserirConta($_SESSION["email"], $cadastrar->getsenha());
     
-   echo $banco->InserirEndereco($_SESSION["rua"], $_SESSION["cep"],$_SESSION["numero"],
+   $resul3 = $banco->InserirEndereco($_SESSION["rua"], $_SESSION["cep"],$_SESSION["numero"],
                                   $_SESSION["cidade"], $_SESSION["estado"],
                                     $_SESSION["bairro"], $_SESSION["complemento"],$_SESSION["email"]);
     
-   // session_destroy();
-    //Temporario
-   // header("Location: ../View/Banco-cadastrar-conta.html");
+  session_destroy();
+  
+  if($resul1 == true && $resul2 == true && $resul3 == true){
+    header("Location: ../index.html");
+  }
+  
 
 ?>
