@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Perfil</title>
+    <style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body
+	{
+		font-family: Rubik, Arial,sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.4;
+		background-color: #ededed;
+		color: #000000;
+	}
+	.conteudo
+	{
+		display: flex;
+	}
+	.menu-corpo
+	{
+		flex: 20%;
+		border-right: 1px solid #CCC;
+		min-width: 257px;
+		height: 100rem;
+	}
+	.menu-retangulo
+	{
+		background-color: #008ad6;
+		height: 68px;
+	}
+	.main-retangulo
+	{
+		background-color: #009ee3;
+		height: 68px;
+		width: 100%;
+		display: flex;
+	}
+	.menu > div
+	{
+		padding-top: 30px;
+	}
+	.principal
+	{
+		flex: 80%;
+	}
+	.nome-de-usuario
+	{
+		font-size: 1.24 pt;
+		font-weight:bold;
+		color:#FFF;
+		padding-left: 10px;
+	}
+	img[alt^=avatar]
+	{
+		border-radius: 50%;
+		height: 30px;
+		width: 30px;
+		background-color: #FDFDFD;
+		padding: 5px;
+	}
+	.alinha
+	{
+		display:flex;
+		align-items: center;
+		margin-left: 30px;
+	}
+	.tamanho
+	{
+		height: 100%;
+	}
+	.menu > div
+	{
+		margin-left: 30px;
+	}
+	nav[class^=menu] a
+	{
+		text-decoration:none;
+		color:#06C;
+	}
+	.nome-do-menu
+	{
+		font-size: 1.58 pt;
+		font-weight:bold;
+		text-transform:uppercase;
+		color:#FFF;
+	}
+	.centraliza-conteudo
+	{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	
+
+	.bl-caiaxas
+	{
+		width: 100%;
+		margin: 0 auto;
+		height: 900px;
+		display: flex;
+		justify-content: center;
+	}
+	.bl-acoes
+	{
+		width: 370px;
+		height: 223px;
+		background-color: #FFF;
+		padding: 30px;
+		margin: 20px;
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.bl-atividades
+	{
+		float: left;
+		max-width: 539px;
+		min-width: 100px; 
+		margin: 13px 20px;
+	}
+	.bl-atividade-caixas
+	{
+		background-color: #FFF;
+		font-size: 16px;
+	}
+	.bl-caixa-inicial
+	{
+		height: 104px;
+		padding: 10px 20px;
+		margin-top: 9px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.bl-pesquisar
+	{
+		height: 41px;
+		background-color: #f5f5f5;
+		padding: 0 20px;
+		padding-right: 50px;
+		border: 1px solid #999;
+		font-size: 16px;
+		outline: none;
+		width: 60%;
+	}
+	
+	.bl-imagem-lupa
+	{
+		width: 20px;
+		height: 20px;
+		position: relative;
+		cursor: pointer;
+		top: 5px;
+		left: -40px;
+	}
+	.bl-caixas-secundarias
+	{
+		margin-top: 10px;
+		height: 59px;
+		padding: 5px 20px;
+		cursor: pointer;
+	}
+	.bl-alinha-hmeio
+	{
+		display: flex;
+		align-items: center;
+	}
+	.bl-caixas-secundarias div img
+	{
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		border: 1px solid #009ee3;
+		margin-right: 10px;
+		padding: 5px;
+	}
+	.bl-caixas-final
+	{
+		margin-top: 10px;
+		height: 20px;
+		padding: 5px 20px;
+	}
+	.bl-caixas-final a
+	{
+		text-decoration: none;
+		color: #009ee3;
+	}
+	.bl-caixas-final a:hover
+	{
+		color: #b1e0f5;
+	}
+	.bl-caixas-final a:visited
+	{
+		color: #009ee3;
+	}
+	.bl-espacamento
+	{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.bl-centraliza-info
+	{
+		text-align: center;
+	}
+	.bl-centraliza-info p:nth-child(1)
+	{
+		font-weight: 500;
+		font-size: 16px;
+	}
+	.bl-centraliza-info p:nth-child(2)
+	{
+		color:#999;
+		font-size: 12px;
+	}
+	.bl-centraliza-link
+	{
+		display: flex;
+		justify-content: center;
+	}
+	.bl-botao-azul-fraco
+	{
+		height: 40px;
+		width: 100px;
+		background-color: #e3edfb;
+		color: #009ee3;
+		font-size: 12px;
+		border: none;
+		border-radius: 15px;
+	}
+	.bl-botao-azul-fraco-lar
+	{
+		width: 48%;
+	}
+	@media (max-width: 750px)
+	{
+		.bl-caiaxas
+		{
+			width: 100%;
+			margin: 0 auto;
+			min-width: 400px;
+			height: 100vh;
+			display: block;
+		}
+		
+		.bl-caiaxas
+		{
+			width: 100%;
+			margin: 0 auto;
+			min-width: 400px;
+			height: 100vh;
+			display: block;
+		}
+		.bl-acoes
+		{
+			width: 65%;
+			height: 223px;
+			background-color: #FFF;
+			padding: 30px;
+			margin: 0 auto;
+			margin-top: 20px;
+		}
+		.bl-atividades
+		{
+			width: 80%;
+			margin: 0 auto;
+			float: none;
+		}
+		.bl-pesquisar 
+		{
+			width: 60%;
+		}
+	}
+	body .bl-conteudo
+	{
+	    zoom: 0.9;
+	}
+	.bl-elem-in-block
+	{
+		display: inline-block;
+	}
+	.bl-dinheiro-font
+	{
+		font-size: 12px;
+	}
+	.bl-distribui
+	{
+		display: flex;
+		justify-content: space-between;
+	}
+	.bl-espacamento-acoes
+	{
+		margin-bottom: 20px;
+	}
+	</style>
+</head>
+    <body>
+        <div class="conteudo">
+        	<aside class="menu-corpo">
+            	<div class="menu-retangulo">
+                	<div class="tamanho">
+                        <div class="alinha tamanho">
+                        <img alt="avatar" src="./icones/Icone-Pessoa.png">
+                        <span class="nome-de-usuario">Usuário</span>
+                        </div>
+                	</div>
+                </div>
+                <nav class="menu">
+                	<div><a href="#">Início</a></div>
+                    <div><a href="#">Seu perfil</a></div>
+                    <div><a href="#">Ajuda</a></div>
+                    <div><a href="#">Seu dinheiro</a></div>
+                    <div><a href="#">Atividade</a></div>
+                    <div><a href="#">Enviar dinheiro</a></div>
+                    <div><a href="#">Sair</a></div>
+                </nav>
+            </aside>
+            <main class="principal">
+                <div class="main-retangulo">
+                <span class="nome-do-menu alinha">Início</span>
+                </div>
+                <div class="centraliza-conteudo">
+                 	<!--Modelo correspondente aqui-->
+					 <div class="bl-caiaxas">
+						<div class="bl-acoes">
+							<div class="bl-distribui">
+								<section class="bl-elem-in-block">
+									<p class="bl-dinheiro-font">Dinheiro rendendo disponível</p>
+									<strong>R$ 454555788,99</strong>
+								</section>
+								<section class="bl-elem-in-block">
+									<button class="bl-botao-azul-fraco">Seu perfil</button>
+								</section>
+							</div>
+							<div>
+								<section class="bl-dinheiro-font" style="padding-bottom: 20px;">
+									<span>R$</span>
+									<span>9,99 rendidos</span>
+								</section>
+								<section class="bl-distribui">
+									<button class="bl-botao-azul-fraco  bl-botao-azul-fraco-lar">Depositar dinheiro</button>
+									<button class="bl-botao-azul-fraco  bl-botao-azul-fraco-lar">Trensnferir dinheiro</button>
+								</section>
+							</div>
+						</div>
+						<div class="bl-atividades">
+							<div class="bl-atividade-caixas bl-caixa-inicial">
+								<h4>Sua Atividade</h4>
+								<div>
+									<input type="text" id="barra_de_pesquisa" class="bl-pesquisar" placeholder="Buscar"/>
+									<img src="./icones/Icone-Lupa.png" alt="lupa" class="bl-imagem-lupa" id="lupa">
+								</div>
+							</div>
+							<div class="bl-atividade-caixas bl-caixas-secundarias bl-espacamento" meta-caixa-id="7784554654545">
+								<div class="bl-alinha-hmeio">
+									<img src="./icones/Icone-Depositar.png" alt="icone-depositar">
+									<span>Você depositou um dinheiro</span>
+								</div>
+								<div class="bl-centraliza-info">
+									<p><span>R$ 900,00</span></p>
+									<p><span>21 de junho</span></p>
+								</div>
+							</div>
+							<div class="bl-atividade-caixas bl-caixas-secundarias bl-espacamento" meta-caixa-id="4557787855555">
+								<div class="bl-alinha-hmeio">
+									<img src="./icones/Icone-Transferir.png" alt="icone-transferir">
+									<span>Você enviou um dinheiro</span>
+								</div>
+								<div class="bl-centraliza-info">
+									<p><span>R$ 700,00</span></p>
+									<p><span>21 de junho</span></p>
+								</div>
+							</div>
+							<div class="bl-atividade-caixas bl-caixas-secundarias bl-espacamento" meta-caixa-id="45554555544555">
+								<div class="bl-alinha-hmeio">
+									<img src="./icones/Icone-Recebeu-Transferencia.png" alt="icone-transferir">
+									<span>Você doou para a Ação Social</span>
+								</div>
+								<div class="bl-centraliza-info">
+									<p><span>R$ 8,00</span></p>
+									<p><span>21 de junho</span></p>
+								</div>
+							</div>
+							<div class="bl-atividade-caixas bl-caixas-secundarias bl-espacamento" meta-caixa-id="45455578845555">
+								<div class="bl-alinha-hmeio">
+									<img src="./icones/Icone-Pagar.png" alt="icone-transferir">
+									<span>Você recebeu uma transferência</span>
+								</div>
+								<div class="bl-centraliza-info">
+									<p><span>R$ 50,00</span></p>
+									<p><span>21 de junho</span></p>
+								</div>
+							</div>
+							<div class="bl-atividade-caixas bl-caixas-secundarias bl-espacamento" meta-caixa-id="7854545855578">
+								<div class="bl-alinha-hmeio">
+									<img src="./icones/Icone-Pagar.png" alt="icone-transferir">
+									<span>Você recebeu uma transferência</span>
+								</div>
+								<div class="bl-centraliza-info">
+									<p><span>R$ 400,00</span></p>
+									<p><span>21 de junho</span></p>
+								</div>
+							</div>
+							<div class="bl-atividade-caixas bl-caixas-secundarias bl-espacamento" meta-caixa-id="7878784578778">
+								<div class="bl-alinha-hmeio">
+									<img src="./icones/Icone-Pagar.png" alt="icone-transferir">
+									<span>Você recebeu uma transferência</span>
+								</div>
+								<div class="bl-centraliza-info">
+									<p><span>R$ 200,00</span></p>
+									<p><span>21 de junho</span></p>
+								</div>
+							</div>
+							<div class="bl-atividade-caixas bl-espacamento bl-caixas-final bl-centraliza-link">
+								<a href="#">Ver mais</a>
+							</div>
+						</div>
+					</div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
